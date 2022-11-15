@@ -3,6 +3,7 @@ import os
 
 from metadata import load_metadata
 from header import expand_header
+from escape import escape_end_XML, render_sublime_syntax
 
 def read_stdin():
 	try:
@@ -12,15 +13,6 @@ def read_stdin():
 		exit(0)
 
 	return source_code
-
-def escape_end_XML(code: list[str]) -> list[str]:
-	patched_code = [line.replace(']]>', ']]$NOT_DEFINED>') for line in code]
-	return patched_code
-
-def render_sublime_syntax(code: list[str]) -> list[str]:
-	patched_code = [line.replace('///***', '') for line in code]
-	patched_code = [line.replace('***///', '') for line in patched_code]
-	return patched_code
 
 def main():
 	source_code = read_stdin()
