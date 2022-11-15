@@ -62,7 +62,7 @@ def load_header(header: str) -> list[str]:
 def expand_header(code: list[str]) -> list[str]:
 	patched_code = []
 
-	INCLUDE_BEGIN = '#include "KCPL/'
+	INCLUDE_BEGIN = '#include "CPL/'
 	INCLUDE_END = '"'
 
 	for line in code:

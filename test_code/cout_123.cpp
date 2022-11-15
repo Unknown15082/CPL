@@ -7,7 +7,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-#include "KCPL/debug.hpp"
+#include "CPL/debug.hpp"
 
 int main(){
 	cout << 123 << "\n";
