@@ -9,14 +9,15 @@ EXPANDED = []
 def load_header(header: str) -> list[str]:
 	try:
 		# The path is "<basepath>/src/<header>"
-		f = open(os.path.join(BASE_PATH, 'src', header))
+		with open(os.path.join(BASE_PATH, 'src', header), 'r') as f:
+			header_source = f.readlines()
 	except FileNotFoundError:
 		# If the header file is not found, exit
 		print(f'ERROR: Header {header} not found')
 		exit(0)
 
 	# Load all lines of the header file
-	return f.readlines()
+	return header_source
 
 def find_indent(line: str) -> str:
 	# Find the indentation of the line
