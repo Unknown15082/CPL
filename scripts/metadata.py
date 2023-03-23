@@ -17,7 +17,7 @@ def find_metadata(code: list[str], command: str) -> str:
 
 def load_metadata(code: list[str]) -> tuple[list[str], dict[str, str]]:
 	# List of metadata
-	commands = ['Name', 'Desc', 'Trigger']
+	commands = ['Name', 'Description', 'Trigger']
 
 	try:
 		# Assert that the first line of code must be /**, else there is no metadata

@@ -1,6 +1,6 @@
 /**
  * Name: Print 123
- * Desc: Print 123
+ * Description: Print 123
  * Trigger: cout123
 **/
 

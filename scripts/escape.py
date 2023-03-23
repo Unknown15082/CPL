@@ -5,6 +5,9 @@ def escape_end_XML(code: list[str]) -> list[str]:
 
 def render_sublime_syntax(code: list[str]) -> list[str]:
 	# Escape lines such as /***$0***/
-	patched_code = [line.replace('/***', '') for line in code]
-	patched_code = [line.replace('***/', '') for line in patched_code]
+	patched_code = [line.replace('/***', '').replace('***/', '') for line in code]
 	return patched_code
+
+def wrap_headings(code: list[str], name: str) -> list[str]:
+	# Wrap the code with >>> <name> <<<
+	return [f'>>> {name} <<<\n'] + code + [f'\n>>> {name} <<<']

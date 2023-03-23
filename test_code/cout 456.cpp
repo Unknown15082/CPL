@@ -1,6 +1,6 @@
 /**
  * Name: Print 456
- * Desc: Print 456
+ * Description: Print 456
  * Trigger: cout456
 **/
 
