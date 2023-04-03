@@ -31,10 +31,8 @@ def read_file(filepath: str) -> str:
 	return source_code
 
 def main():
-	# source_code = read_stdin()
-	filepath = input()
-	source_code = read_file(filepath)
-	print("".join(source_code) + "\n" + "-" * 40)
+	source_code = read_stdin()
+	# print("".join(source_code) + "\n" + "-" * 40)
 
 	source_code, data = load_metadata(source_code)
 	source_code = expand_header(source_code)
@@ -42,8 +40,8 @@ def main():
 	source_code = render_sublime_syntax(source_code)
 	source_code = wrap_headings(source_code, data['Name'])
 
-	print("".join(source_code) + "\n" + "-" * 40)
-	print("Metadata:\n", data)
+	# print("".join(source_code) + "\n" + "-" * 40)
+	# print("Metadata:\n", data)
 
 	create_snippet(source_code, data, SNIPPET_PATH)
 

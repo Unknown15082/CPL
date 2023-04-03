@@ -19,5 +19,5 @@ def create_snippet(code: list[str], metadata: dict[str, str], path: str) -> None
 
     snippet_name = metadata['Name'].replace(' ', '')
 
-    with open(os.path.join(path, f'{snippet_name}.hpp'), 'w+') as f:
+    with open(os.path.join(path, f'{snippet_name}.sublime-snippet'), 'w+') as f:
         f.write(snippet)

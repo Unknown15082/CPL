@@ -10,4 +10,4 @@ def render_sublime_syntax(code: list[str]) -> list[str]:
 
 def wrap_headings(code: list[str], name: str) -> list[str]:
 	# Wrap the code with >>> <name> <<<
-	return [f'>>> {name} <<<\n'] + code + [f'\n>>> {name} <<<']
+	return [f'//=== {name} ===//\n'] + code + [f'\n//=== {name} ===//']
