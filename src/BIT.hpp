@@ -1,0 +1,29 @@
+/**
+ * Name: BIT
+ * Description: Binary Indexed Tree
+ * Trigger: bit
+**/
+
+template <class T>
+struct BIT{
+    vector<T> tree;
+    int _n;
+
+    // O(0)
+    BIT() {}
+    // O(N)
+    BIT(int N): tree(N, T(0)), _n(N) {}
+
+    // O(log N)
+    T get(int l, int r) { return get(r) - get(l-1); }
+    T get(int x){
+        T res = 0;
+        for (; x > 0; x -= x & (-x)) res += tree[x];
+        return res;
+    }
+
+    // O(log N)
+    void update(int x, T delta){
+        for (; x < _n; x += x & (-x)) tree[x] += delta;
+    }
+};
